@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Guide to Professional Git Repositories</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="smooth-scroll">
+
+    <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-2xl font-bold text-gray-800">Git Excellence Guide</div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#foundations" class="nav-link pb-1">Foundations</a>
+                    <a href="#documentation" class="nav-link pb-1">Documentation</a>
+                    <a href="#security" class="nav-link pb-1">Security</a>
+                    <a href="#automation" class="nav-link pb-1">Automation</a>
+                    <a href="#collaboration" class="nav-link pb-1">Collaboration</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+
+        <section id="hero" class="text-center mb-20">
+            <h1 class="text-5xl font-extrabold mb-4 text-gray-800 tracking-tight">Blueprint for Professional Git
+                Repositories</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">An interactive guide to transforming your Git
+                repositories into efficient, secure, and collaborative project ecosystems. Explore the key pillars of
+                repository excellence.</p>
+        </section>
+
+        <section id="foundations" class="mb-20">
+            <h2 class="text-4xl font-bold mb-3 text-center">Repository Foundations</h2>
+            <p class="text-lg text-gray-600 mb-12 text-center max-w-3xl mx-auto">A professional repository starts with a
+                clear and consistent structure. The files in the root directory serve as the main entry point, providing
+                essential information at a glance. Explore the purpose of each foundational file below.</p>
+            <div class="grid md:grid-cols-12 gap-8">
+                <div class="md:col-span-4">
+                    <div id="file-list" class="bg-white rounded-lg p-4 shadow-md space-y-2">
+                        <!-- File list will be injected here -->
+                    </div>
+                </div>
+                <div class="md:col-span-8">
+                    <div id="file-details" class="content-card p-8 h-full min-h-[300px]">
+                        <p class="text-gray-500">Select a file on the left to see its details.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="documentation" class="mb-20">
+            <h2 class="text-4xl font-bold mb-3 text-center">Strategic Documentation</h2>
+            <p class="text-lg text-gray-600 mb-12 text-center max-w-3xl mx-auto">Effective documentation is organized by
+                its purpose. The Diátaxis framework provides a systematic approach, ensuring users can find the right
+                information for their needs, whether they are learning, doing, understanding, or referencing.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div id="diataxis-quadrant-tutorials"
+                    class="content-card p-6 cursor-pointer border-4 border-transparent">
+                    <h3 class="text-2xl font-bold mb-2">Tutorials</h3>
+                    <p>Learning-oriented guides to help users get started and achieve their first success.</p>
+                </div>
+                <div id="diataxis-quadrant-how-to" class="content-card p-6 cursor-pointer border-4 border-transparent">
+                    <h3 class="text-2xl font-bold mb-2">How-to Guides</h3>
+                    <p>Goal-oriented instructions for specific, practical tasks and problems.</p>
+                </div>
+                <div id="diataxis-quadrant-explanation"
+                    class="content-card p-6 cursor-pointer border-4 border-transparent">
+                    <h3 class="text-2xl font-bold mb-2">Explanation</h3>
+                    <p>Understanding-oriented discussions about concepts and design philosophy.</p>
+                </div>
+                <div id="diataxis-quadrant-reference"
+                    class="content-card p-6 cursor-pointer border-4 border-transparent">
+                    <h3 class="text-2xl font-bold mb-2">Reference</h3>
+                    <p>Information-oriented technical specifications, API docs, and facts.</p>
+                </div>
+            </div>
+            <div id="diataxis-details"
+                class="mt-8 bg-blue-50 border-l-4 border-blue-500 text-blue-800 p-6 rounded-r-lg hidden">
+                <!-- Details for selected quadrant -->
+            </div>
+        </section>
+
+        <section id="security" class="mb-20">
+            <h2 class="text-4xl font-bold mb-3 text-center">Robust Security Measures</h2>
+            <p class="text-lg text-gray-600 mb-12 text-center max-w-3xl mx-auto">A proactive security posture is
+                essential. This involves controlling access, requiring authentication, and integrating automated
+                scanning throughout the development lifecycle to detect vulnerabilities early.</p>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4 text-center">Key Automated Scans</h3>
+                    <div class="chart-container">
+                        <canvas id="securityChart"></canvas>
+                    </div>
+                </div>
+                <div id="security-details" class="content-card p-8">
+                    <h3 class="text-2xl font-bold mb-4">Security Layers</h3>
+                    <p class="text-gray-500">Hover over the chart segments to learn about each automated scan type and
+                        its benefits in securing your repository.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="automation" class="mb-20">
+            <h2 class="text-4xl font-bold mb-3 text-center">Efficient CI/CD & Automation</h2>
+            <p class="text-lg text-gray-600 mb-12 text-center max-w-3xl mx-auto">Automating your development pipeline
+                with Continuous Integration and Continuous Delivery (CI/CD) enforces quality, reduces human error, and
+                accelerates delivery, creating a reliable and predictable workflow.</p>
+            <div class="bg-white p-8 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-bold text-center mb-8">The Automated Workflow</h3>
+                <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
+                    <div class="flex items-center">
+                        <div class="bg-gray-700 text-white font-semibold py-2 px-4 rounded-lg">Code Push</div>
+                    </div>
+                    <div class="text-3xl text-gray-400 transform md:rotate-0 rotate-90">&rarr;</div>
+                    <div class="flex items-center flex-col text-center p-4 content-card w-full md:w-auto">
+                        <h4 class="font-bold text-lg">Build</h4>
+                        <p class="text-sm text-gray-600">Code is automatically compiled and packaged.</p>
+                    </div>
+                    <div class="text-3xl text-gray-400 transform md:rotate-0 rotate-90">&rarr;</div>
+                    <div class="flex items-center flex-col text-center p-4 content-card w-full md:w-auto">
+                        <h4 class="font-bold text-lg">Test</h4>
+                        <p class="text-sm text-gray-600">Automated tests run to catch bugs early.</p>
+                    </div>
+                    <div class="text-3xl text-gray-400 transform md:rotate-0 rotate-90">&rarr;</div>
+                    <div class="flex items-center flex-col text-center p-4 content-card w-full md:w-auto">
+                        <h4 class="font-bold text-lg">Deploy</h4>
+                        <p class="text-sm text-gray-600">Successful builds are deployed automatically.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="collaboration" class="mb-20">
+            <h2 class="text-4xl font-bold mb-3 text-center">Streamlined Collaboration</h2>
+            <p class="text-lg text-gray-600 mb-12 text-center max-w-3xl mx-auto">Effective collaboration hinges on clear
+                communication and structured workflows. Best practices for commits, branching, and merging ensure a
+                clean history and a smooth, conflict-free development process.</p>
+            <div class="bg-gray-800 text-white font-mono p-6 rounded-lg shadow-xl">
+                <h3 class="text-xl font-semibold mb-4 text-green-400">$ git commit -m "feat: Add user authentication
+                    module" -m "..."</h3>
+                <div class="border-t border-gray-600 pt-4">
+                    <p class="text-gray-300"><span class="font-bold text-cyan-400">Subject:</span> Concise summary
+                        (&lt;50 chars), imperative mood.</p>
+                    <p class="text-gray-300 mt-2"><span class="font-bold text-cyan-400">Body (Optional):</span> Detailed
+                        explanation of 'what' and 'why', separated by a blank line. Answers motivation and how it
+                        differs from previous implementation.</p>
+                    <p class="text-gray-300 mt-2"><span class="font-bold text-cyan-400">Footer (Optional):</span>
+                        References to issues (e.g., Fixes #123) or notes on breaking changes.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white mt-20">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <p>An Interactive Distillation of Git Repository Best Practices.</p>
+        </div>
+    </footer>
+
+</body>
+
+<script src="script.js"></script>
+
+</html>

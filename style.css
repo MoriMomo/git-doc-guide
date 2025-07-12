@@ -1,0 +1,46 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #F8F7F4;
+    color: #3D3D3D;
+}
+
+.nav-link {
+    transition: color 0.3s, border-bottom-color 0.3s;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-link.active,
+.nav-link:hover {
+    color: #2c5282;
+    border-bottom-color: #2c5282;
+}
+
+.content-card {
+    background-color: #FFFFFF;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.content-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.1);
+}
+
+.chart-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 350px;
+    max-height: 400px;
+}
+
+.smooth-scroll {
+    scroll-behavior: smooth;
+}
+
+[x-cloak] {
+    display: none !important;
+}
